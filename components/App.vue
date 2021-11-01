@@ -27,6 +27,9 @@
 </template>
 
 <script>
+import io from 'socket.io-client';
+
+var socket = io.listen('http://150.136.52.96:8000')
 export default {
   data() {
     return {
@@ -37,6 +40,11 @@ export default {
     this.$axios.get('/api/notes')
     .then(response => {
       this.message = response.data
+    })
+  },
+  getRealTimeData() {
+    socket.on('create_note', (data) => {
+      mounted()
     })
   }
 }

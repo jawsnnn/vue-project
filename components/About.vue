@@ -8,7 +8,6 @@
           {{ message }}
         </div>
       </div>
-      </div>
 </template>
 
 <script>
