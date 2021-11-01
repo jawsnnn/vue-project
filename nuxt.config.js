@@ -38,7 +38,23 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+
+  axios: {
+    baseUrl: 'http://150.136.52.96:8000/',
+    credentials: false,
+    debug: true,
+    proxy: true
+  },
+
+  proxy: {
+    '/api': {
+      target: 'http://150.136.52.96:8000/',
+      pathRewrite: { '^/api/': '' }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

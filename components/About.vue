@@ -4,10 +4,9 @@
         <NuxtLink to="/" class="nav-link">Home</NuxtLink>
         <NuxtLink to="/about" class="navbar-brand">About</NuxtLink>
       </nav>
-      <div class="mt-8 bg-white overflow-hidden sm:rounded-lg p-6">
-        <p class = "mt-3 text-gray-600">
+      <div class="col-md-8 offset-md-2 mt-3 dark-banner shadow">
           {{ message }}
-        </p>
+        </div>
       </div>
       </div>
 </template>
@@ -16,7 +15,7 @@
 export default {
   data() {
     return {
-      message: "About this"
+      message: "This is a simple VueJS application"
     }
   }
 }
